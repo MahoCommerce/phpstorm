@@ -1,0 +1,32 @@
+<idea-plugin>
+    <id>com.mahocommerce.maho</id>
+    <name>Maho</name>
+    <vendor url="https://mahocommerce.com">Maho Commerce</vendor>
+
+    <description><![CDATA[
+    Maho Intelligence LSP integration for the <a href="https://mahocommerce.com">Maho</a> ecommerce platform.
+
+    <h2>Features</h2>
+    <ul>
+        <li>Autocomplete for class aliases, config paths, event names, template paths, layout handles</li>
+        <li>Structural XML autocomplete for config.xml, system.xml, adminhtml.xml, and layout files</li>
+        <li>Go-to-definition for class aliases, templates, and methods</li>
+        <li>Hover documentation with class resolution, rewrite info, and observer details</li>
+        <li>Diagnostics for unresolved aliases</li>
+    </ul>
+
+    <h2>Requirements</h2>
+    <ul>
+        <li>A Maho project with the <code>maho</code> CLI in the project root</li>
+        <li>PHP available on PATH (or configured in settings)</li>
+    </ul>
+    ]]></description>
+
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.jetbrains.php</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <platform.lsp.serverSupportProvider
+            implementation="com.mahocommerce.maho.lsp.MahoLspServerSupportProvider"/>
+    </extensions>
+</idea-plugin>
