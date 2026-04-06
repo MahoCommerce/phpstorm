@@ -6,13 +6,14 @@ Provides code completion, hover information, go-to-definition, and diagnostics f
 
 ## Prerequisites
 
+- PhpStorm 2026.1 or later
 - [Maho](https://mahocommerce.com) 26.5 or later
 - PHP available on your PATH (or configured via settings)
 
 ## Setup
 
 1. Install the plugin:
-   - **JetBrains Marketplace**: Install from the [JetBrains Marketplace](https://plugins.jetbrains.com/) (search for "Maho")
+   - **JetBrains Marketplace**: Marketplace listing is work in progress
    - **Manual install**: Download the `.zip` file from the [latest release](https://github.com/MahoCommerce/phpstorm/releases/latest), then install via **Settings → Plugins → ⚙️ → Install Plugin from Disk…**
 2. Open a Maho project — the plugin activates automatically when it detects a `maho` file in the project root
 
