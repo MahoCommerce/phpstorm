@@ -28,5 +28,12 @@
     <extensions defaultExtensionNs="com.intellij">
         <platform.lsp.serverSupportProvider
             implementation="com.mahocommerce.maho.lsp.MahoLspServerSupportProvider"/>
+        <projectConfigurable
+            instance="com.mahocommerce.maho.lsp.MahoConfigurable"
+            id="com.mahocommerce.maho.settings"
+            displayName="Maho"
+            parentId="tools"/>
+        <projectService
+            serviceImplementation="com.mahocommerce.maho.lsp.MahoSettings"/>
     </extensions>
 </idea-plugin>

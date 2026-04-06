@@ -13,7 +13,10 @@ class MahoLspServerDescriptor(project: Project) :
 
     override fun createCommandLine(): GeneralCommandLine {
         val basePath = project.basePath ?: error("No project base path")
-        return GeneralCommandLine("php", "$basePath/maho", "dev:lsp:start")
+        val phpCommand = MahoSettings.getInstance(project).state.phpCommand.orEmpty().ifEmpty { "php" }
+        val parts = phpCommand.trim().split("\\s+".toRegex())
+
+        return GeneralCommandLine(parts + listOf("$basePath/maho", "dev:lsp:start"))
             .withWorkDirectory(basePath)
     }
 }
