@@ -1,5 +1,7 @@
 # Maho for PhpStorm
 
+[![Get from Marketplace](https://img.shields.io/badge/Get_from-Marketplace-000000?style=for-the-badge&logo=phpstorm&logoColor=white)](https://plugins.jetbrains.com/plugin/31116-maho)
+
 [Maho Intelligence](https://mahocommerce.com) LSP integration for [PhpStorm](https://www.jetbrains.com/phpstorm/) and other JetBrains IDEs.
 
 Provides code completion, hover information, go-to-definition, and diagnostics for Maho's class alias system across PHP and XML files.
@@ -13,7 +15,7 @@ Provides code completion, hover information, go-to-definition, and diagnostics f
 ## Setup
 
 1. Install the plugin:
-   - **JetBrains Marketplace**: Marketplace listing is work in progress
+   - **JetBrains Marketplace**: Install [Maho](https://plugins.jetbrains.com/plugin/31116-maho) from the marketplace, or search for "Maho" in **Settings → Plugins → Marketplace**
    - **Manual install**: Download the `.zip` file from the [latest release](https://github.com/MahoCommerce/phpstorm/releases/latest), then install via **Settings → Plugins → ⚙️ → Install Plugin from Disk…**
 2. Open a Maho project — the plugin activates automatically when it detects a `maho` file in the project root
 
