@@ -46,7 +46,7 @@
             id="Maho"
             anchor="bottom"
             factoryClass="com.mahocommerce.maho.cli.MahoToolWindowFactory"
-            icon="AllIcons.Toolwindows.ToolWindowRun"/>
+            icon="/icons/toolwindow.svg"/>
     </extensions>
 
     <actions>

@@ -109,7 +109,7 @@ class MahoDatabaseConfigurator : ProjectActivity {
                 }
                 "sqlite" in type -> {
                     val dbPath = if (config.dbname.startsWith("/")) config.dbname
-                                 else "$basePath/${config.dbname}"
+                                 else "$basePath/var/db/${config.dbname}"
                     "jdbc:sqlite:$dbPath"
                 }
                 else -> null

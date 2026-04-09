@@ -13,7 +13,7 @@ object MahoLocalXmlParser {
             val doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(localXmlFile)
             val connection = findDefaultConnection(doc.documentElement) ?: return null
 
-            val type = connection.childText("type") ?: "pdo_mysql"
+            val type = connection.childText("engine") ?: connection.childText("type") ?: "pdo_mysql"
             val hostRaw = connection.childText("host") ?: "localhost"
             val username = connection.childText("username") ?: ""
             val password = connection.childText("password") ?: ""

@@ -1,5 +1,13 @@
 <!-- Keep a Changelog: https://keepachangelog.com -->
 
+## [0.9.4]
+### Fixed
+- Read database engine from `<engine>` field in local.xml (not `<type>`)
+- Fix SQLite database path to `var/db/{dbname}`
+
+### Improved
+- Use Maho logo as tool window icon
+
 ## [0.9.3]
 ### Added
 - **Auto-configure Database Explorer** — Automatically creates a data source from `app/etc/local.xml` with support for MySQL, PostgreSQL, and SQLite
