@@ -1,5 +1,9 @@
 <!-- Keep a Changelog: https://keepachangelog.com -->
 
+## [0.9.2]
+### Improved
+- Auto-focus first input field when command parameter dialogs open
+
 ## [0.9.1]
 ### Fixed
 - Replace deprecated `ProcessAdapter` with `ProcessListener` to resolve API deprecation warnings

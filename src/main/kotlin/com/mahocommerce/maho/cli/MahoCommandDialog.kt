@@ -32,6 +32,10 @@ class MahoCommandDialog(
         }
     }
 
+    override fun getPreferredFocusedComponent(): JComponent? {
+        return fields.values.firstOrNull()
+    }
+
     override fun doValidate(): ValidationInfo? {
         for (param in command.parameters) {
             if (param.required) {
