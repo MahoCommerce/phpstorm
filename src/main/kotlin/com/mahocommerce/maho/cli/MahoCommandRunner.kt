@@ -2,8 +2,8 @@ package com.mahocommerce.maho.cli
 
 import com.intellij.execution.configurations.GeneralCommandLine
 import com.intellij.execution.process.OSProcessHandler
-import com.intellij.execution.process.ProcessAdapter
 import com.intellij.execution.process.ProcessEvent
+import com.intellij.execution.process.ProcessListener
 import com.intellij.execution.ui.ConsoleView
 import com.intellij.execution.ui.ConsoleViewContentType
 import com.intellij.openapi.components.Service
@@ -58,7 +58,7 @@ class MahoCommandRunner(private val project: Project) {
 
             val handler = OSProcessHandler(commandLine)
 
-            handler.addProcessListener(object : ProcessAdapter() {
+            handler.addProcessListener(object : ProcessListener {
                 override fun onTextAvailable(event: ProcessEvent, outputType: Key<*>) {
                     consoleView.print(event.text, ConsoleViewContentType.NORMAL_OUTPUT)
                 }

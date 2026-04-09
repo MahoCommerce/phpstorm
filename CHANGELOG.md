@@ -1,5 +1,9 @@
 <!-- Keep a Changelog: https://keepachangelog.com -->
 
+## [0.9.1]
+### Fixed
+- Replace deprecated `ProcessAdapter` with `ProcessListener` to resolve API deprecation warnings
+
 ## [0.9.0]
 ### Added
 - **CLI Commands integration** — Run Maho CLI commands directly from the IDE via Tools > Maho menu
