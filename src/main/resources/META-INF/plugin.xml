@@ -24,6 +24,7 @@
 
     <depends>com.intellij.modules.platform</depends>
     <depends>com.jetbrains.php</depends>
+    <depends>com.intellij.database</depends>
 
     <extensions defaultExtensionNs="com.intellij">
         <platform.lsp.serverSupportProvider
@@ -39,6 +40,8 @@
             serviceImplementation="com.mahocommerce.maho.cli.MahoCommandRunner"/>
         <projectService
             serviceImplementation="com.mahocommerce.maho.cli.MahoConsoleManager"/>
+        <postStartupActivity
+            implementation="com.mahocommerce.maho.database.MahoDatabaseConfigurator"/>
         <toolWindow
             id="Maho"
             anchor="bottom"

@@ -21,7 +21,7 @@ repositories {
 dependencies {
     intellijPlatform {
         create(providers.gradleProperty("platformType"), providers.gradleProperty("platformVersion"))
-        bundledPlugins("com.jetbrains.php")
+        bundledPlugins("com.jetbrains.php", "com.intellij.database")
     }
 }
 
@@ -50,6 +50,12 @@ intellijPlatform {
         ideaVersion {
             sinceBuild = providers.gradleProperty("pluginSinceBuild")
             untilBuild = providers.gradleProperty("pluginUntilBuild")
+        }
+    }
+
+    pluginVerification {
+        ides {
+            create(org.jetbrains.intellij.platform.gradle.IntelliJPlatformType.PhpStorm, "2026.1")
         }
     }
 

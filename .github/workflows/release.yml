@@ -20,6 +20,8 @@ jobs:
 
       - run: ./gradlew buildPlugin
 
+      - run: ./gradlew verifyPlugin
+
       - name: Create GitHub release and upload .zip
         run: gh release create ${{ github.ref_name }} build/distributions/*.zip --generate-notes
         env:

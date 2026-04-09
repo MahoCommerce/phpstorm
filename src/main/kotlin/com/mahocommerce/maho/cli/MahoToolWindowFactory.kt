@@ -14,7 +14,7 @@ class MahoToolWindowFactory : ToolWindowFactory, DumbAware {
         toolWindow.contentManager.addContent(content)
     }
 
-    override fun shouldBeAvailable(project: Project): Boolean {
+    override suspend fun isApplicableAsync(project: Project): Boolean {
         val basePath = project.basePath ?: return false
         return java.io.File(basePath, "maho").isFile
     }

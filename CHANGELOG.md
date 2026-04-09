@@ -1,5 +1,15 @@
 <!-- Keep a Changelog: https://keepachangelog.com -->
 
+## [0.9.3]
+### Added
+- **Auto-configure Database Explorer** — Automatically creates a data source from `app/etc/local.xml` with support for MySQL, PostgreSQL, and SQLite
+- File watcher keeps the data source in sync when database configuration changes
+- Setting to enable/disable database auto-configuration (Tools > Maho)
+
+### Improved
+- Plugin verification step added to release workflow
+- Replaced deprecated `shouldBeAvailable` with `isApplicableAsync` in tool window factory
+
 ## [0.9.2]
 ### Improved
 - Auto-focus first input field when command parameter dialogs open
