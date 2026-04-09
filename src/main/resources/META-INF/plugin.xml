@@ -35,5 +35,23 @@
             parentId="tools"/>
         <projectService
             serviceImplementation="com.mahocommerce.maho.lsp.MahoSettings"/>
+        <projectService
+            serviceImplementation="com.mahocommerce.maho.cli.MahoCommandRunner"/>
+        <projectService
+            serviceImplementation="com.mahocommerce.maho.cli.MahoConsoleManager"/>
+        <toolWindow
+            id="Maho"
+            anchor="bottom"
+            factoryClass="com.mahocommerce.maho.cli.MahoToolWindowFactory"
+            icon="AllIcons.Toolwindows.ToolWindowRun"/>
     </extensions>
+
+    <actions>
+        <group id="com.mahocommerce.maho.cli.MahoCommandGroup"
+               class="com.mahocommerce.maho.cli.MahoCommandActionGroup"
+               text="Maho"
+               popup="true">
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+        </group>
+    </actions>
 </idea-plugin>
