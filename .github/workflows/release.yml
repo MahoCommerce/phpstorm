@@ -20,8 +20,8 @@ jobs:
 
       - run: ./gradlew buildPlugin
 
-      - name: Upload .zip to release
-        run: gh release upload ${{ github.ref_name }} build/distributions/*.zip
+      - name: Create GitHub release and upload .zip
+        run: gh release create ${{ github.ref_name }} build/distributions/*.zip --generate-notes
         env:
           GH_TOKEN: ${{ github.token }}
 
