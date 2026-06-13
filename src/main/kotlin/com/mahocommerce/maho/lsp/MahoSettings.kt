@@ -16,4 +16,5 @@ class MahoSettings : SimplePersistentStateComponent<MahoSettingsState>(MahoSetti
 class MahoSettingsState : BaseState() {
     var phpCommand by string("php")
     var autoConfigureDatabase by property(true)
+    var autoConfigureMcp by property(true)
 }

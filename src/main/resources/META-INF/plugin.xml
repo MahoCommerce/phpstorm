@@ -4,15 +4,30 @@
     <vendor url="https://mahocommerce.com">Maho Commerce</vendor>
 
     <description><![CDATA[
-    Maho Intelligence LSP integration for the <a href="https://mahocommerce.com">Maho</a> ecommerce platform.
+    Developer tooling for the <a href="https://mahocommerce.com">Maho</a> ecommerce platform.
 
-    <h2>Features</h2>
+    <h2>Code intelligence (LSP)</h2>
     <ul>
         <li>Autocomplete for class aliases, config paths, event names, template paths, layout handles</li>
         <li>Structural XML autocomplete for config.xml, system.xml, adminhtml.xml, and layout files</li>
         <li>Go-to-definition for class aliases, templates, and methods</li>
         <li>Hover documentation with class resolution, rewrite info, and observer details</li>
         <li>Diagnostics for unresolved aliases</li>
+    </ul>
+
+    <h2>AI integration (MCP)</h2>
+    <ul>
+        <li>Auto-configures the Maho MCP server for Junie / AI Assistant by writing <code>.junie/mcp/mcp.json</code></li>
+    </ul>
+
+    <h2>Database</h2>
+    <ul>
+        <li>Auto-configures a Database Explorer data source from <code>app/etc/local.xml</code> (MySQL, PostgreSQL, SQLite)</li>
+    </ul>
+
+    <h2>CLI</h2>
+    <ul>
+        <li>Run <code>maho</code> commands from a dedicated tool window and the Tools menu</li>
     </ul>
 
     <h2>Requirements</h2>
@@ -42,6 +57,8 @@
             serviceImplementation="com.mahocommerce.maho.cli.MahoConsoleManager"/>
         <postStartupActivity
             implementation="com.mahocommerce.maho.database.MahoDatabaseConfigurator"/>
+        <postStartupActivity
+            implementation="com.mahocommerce.maho.mcp.MahoMcpConfigurator"/>
         <toolWindow
             id="Maho"
             anchor="bottom"

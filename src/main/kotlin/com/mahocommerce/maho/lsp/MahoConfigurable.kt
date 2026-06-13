@@ -8,6 +8,7 @@ import com.intellij.ui.dsl.builder.bindText
 import com.intellij.ui.dsl.builder.bindSelected
 import com.intellij.ui.dsl.builder.AlignX
 import com.mahocommerce.maho.database.MahoDatabaseConfigurator
+import com.mahocommerce.maho.mcp.MahoMcpConfigurator
 
 class MahoConfigurable(private val project: Project) : BoundConfigurable("Maho") {
 
@@ -20,6 +21,10 @@ class MahoConfigurable(private val project: Project) : BoundConfigurable("Maho")
     private var autoConfigureDatabase: Boolean
         get() = settings.state.autoConfigureDatabase
         set(value) { settings.state.autoConfigureDatabase = value }
+
+    private var autoConfigureMcp: Boolean
+        get() = settings.state.autoConfigureMcp
+        set(value) { settings.state.autoConfigureMcp = value }
 
     override fun createPanel() = panel {
         group("LSP Server") {
@@ -41,6 +46,15 @@ class MahoConfigurable(private val project: Project) : BoundConfigurable("Maho")
                 text("Reads connection details from <code>app/etc/local.xml</code> and creates a data source automatically")
             }
         }
+        group("MCP Server") {
+            row {
+                checkBox("Auto-configure Maho MCP server for Junie / AI Assistant")
+                    .bindSelected(::autoConfigureMcp)
+            }
+            row("") {
+                text("Writes <code>.junie/mcp/mcp.json</code> pointing at <code>maho dev:mcp:start</code>")
+            }
+        }
     }
 
     override fun apply() {
@@ -51,6 +65,9 @@ class MahoConfigurable(private val project: Project) : BoundConfigurable("Maho")
         val basePath = project.basePath
         if (basePath != null && settings.state.autoConfigureDatabase) {
             MahoDatabaseConfigurator.configureDatabase(project, basePath)
+        }
+        if (basePath != null && settings.state.autoConfigureMcp) {
+            MahoMcpConfigurator.configureMcp(project, basePath)
         }
     }
 }

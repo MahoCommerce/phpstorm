@@ -1,5 +1,10 @@
 <!-- Keep a Changelog: https://keepachangelog.com -->
 
+## [0.10.0]
+### Added
+- **Auto-configure Maho MCP server** — Writes `.junie/mcp/mcp.json` pointing Junie / AI Assistant at `maho dev:mcp:start`
+- Setting to enable/disable MCP auto-configuration (Tools > Maho)
+
 ## [0.9.4]
 ### Fixed
 - Read database engine from `<engine>` field in local.xml (not `<type>`)
