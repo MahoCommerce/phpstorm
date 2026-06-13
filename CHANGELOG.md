@@ -1,5 +1,9 @@
 <!-- Keep a Changelog: https://keepachangelog.com -->
 
+## [0.10.1]
+### Fixed
+- Eliminate plugin verifier warnings (deprecated/experimental API usages) caused by Kotlin emitting copies of platform interface default methods
+
 ## [0.10.0]
 ### Added
 - **Auto-configure Maho MCP server** — Writes `.junie/mcp/mcp.json` pointing Junie / AI Assistant at `maho dev:mcp:start`
