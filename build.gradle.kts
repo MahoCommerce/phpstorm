@@ -9,6 +9,12 @@ version = providers.gradleProperty("pluginVersion").get()
 
 kotlin {
     jvmToolchain(23)
+    compilerOptions {
+        // Emit real JVM default methods instead of DefaultImpls-delegating copies, so
+        // implementing classes don't carry copies of platform interface default methods
+        // (which the plugin verifier flags as deprecated/experimental API usage).
+        freeCompilerArgs.add("-jvm-default=no-compatibility")
+    }
 }
 
 repositories {
