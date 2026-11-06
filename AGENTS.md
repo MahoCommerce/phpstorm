@@ -31,6 +31,7 @@ Source lives under `src/main/kotlin/com/mahocommerce/maho/`, split by feature ar
 
 **`lsp/`**
 - **MahoLspIntegrationProvider** — Entry point registered in `plugin.xml`. On file open, checks if the file is PHP/XML/PHTML and a `maho` CLI exists in the project root, then starts the LSP server.
+- **MahoDependencyCheck** — Checks for `react/stream` (an optional dev dependency of Maho that the LSP and MCP servers need) in the project's vendor dir. If it is missing, the LSP server is not started, and one notification per project session offers `composer require --dev react/stream`.
 - **MahoLspClientDescriptor** — Builds the command line (`php maho dev:lsp:start`) to launch the LSP process. Reads the configurable PHP command from settings.
 - **MahoSettings / MahoSettingsState** — Project-level persistent state (`maho.xml`) storing the PHP command path and the `autoConfigureDatabase` / `autoConfigureMcp` toggles.
 - **MahoConfigurable** — Settings UI panel under Tools > Maho (LSP / Database / MCP groups). On apply, restarts the LSP server and re-runs the database and MCP configurators.

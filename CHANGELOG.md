@@ -1,5 +1,9 @@
 <!-- Keep a Changelog: https://keepachangelog.com -->
 
+## [0.11.1]
+### Added
+- Notification when `react/stream` is missing: the Maho LSP and MCP servers need this optional dev dependency of Maho, which projects made from maho-starter do not have. The notification can run `composer require --dev react/stream` in the Maho tool window, then starts the LSP server
+
 ## [0.11.0]
 ### Fixed
 - Support PhpStorm 2026.3 (build 263)

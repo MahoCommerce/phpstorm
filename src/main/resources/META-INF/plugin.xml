@@ -34,6 +34,9 @@
     <ul>
         <li>A Maho project with the <code>maho</code> CLI in the project root</li>
         <li>PHP available on PATH (or configured in settings)</li>
+        <li>For code intelligence and the MCP server: <code>react/stream</code>, an optional dev dependency of Maho.
+            A project made from maho-starter does not have it: run <code>composer require --dev react/stream</code>.
+            The plugin detects it and offers to install it.</li>
     </ul>
     ]]></description>
 
@@ -64,6 +67,9 @@
             anchor="bottom"
             factoryClass="com.mahocommerce.maho.cli.MahoToolWindowFactory"
             icon="/icons/toolwindow.svg"/>
+        <notificationGroup
+            id="Maho"
+            displayType="BALLOON"/>
     </extensions>
 
     <actions>

@@ -17,6 +17,7 @@ internal class MahoLspIntegrationProvider : LspIntegrationProvider {
         val basePath = project.basePath ?: return
         val mahoFile = java.io.File(basePath, "maho")
         if (!mahoFile.isFile) return
+        if (!MahoDependencyCheck.checkOrNotify(project, basePath)) return
 
         clientStarter.ensureClientStarted(MahoLspClientDescriptor(project))
     }

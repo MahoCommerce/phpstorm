@@ -11,6 +11,13 @@ Provides code completion, hover information, go-to-definition, and diagnostics f
 - PhpStorm 2026.1.4 or later
 - [Maho](https://mahocommerce.com) 26.5 or later
 - PHP available on your PATH (or configured via settings)
+- For code intelligence and the MCP server: `react/stream`, an optional dev dependency of Maho. A project made from `maho-starter` does not have it, so run this in the project root:
+
+  ```bash
+  composer require --dev react/stream
+  ```
+
+  If it is missing, the plugin shows a notification with an **Install with Composer** button.
 
 ## Setup
 
