@@ -8,7 +8,7 @@ Provides code completion, hover information, go-to-definition, and diagnostics f
 
 ## Prerequisites
 
-- PhpStorm 2026.1 or later
+- PhpStorm 2026.1.4 or later
 - [Maho](https://mahocommerce.com) 26.5 or later
 - PHP available on your PATH (or configured via settings)
 

@@ -1,5 +1,13 @@
 <!-- Keep a Changelog: https://keepachangelog.com -->
 
+## [0.11.0]
+### Fixed
+- Support PhpStorm 2026.3 (build 263)
+
+### Changed
+- Migrate to the new LSP API (`LspIntegrationProvider`, `ProjectWideLspClientDescriptor`, `LspClientManager`). The minimum supported version is now PhpStorm 2026.1.4
+- Update Gradle to 9.9.0, Kotlin to 2.4.21, and the IntelliJ Platform Gradle plugin to 2.20.0
+
 ## [0.10.1]
 ### Fixed
 - Eliminate plugin verifier warnings (deprecated/experimental API usages) caused by Kotlin emitting copies of platform interface default methods

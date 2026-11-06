@@ -1,7 +1,7 @@
 plugins {
     id("java")
-    id("org.jetbrains.kotlin.jvm") version "2.3.0"
-    id("org.jetbrains.intellij.platform") version "2.13.1"
+    id("org.jetbrains.kotlin.jvm") version "2.4.21"
+    id("org.jetbrains.intellij.platform") version "2.20.0"
 }
 
 group = providers.gradleProperty("pluginGroup").get()
@@ -61,7 +61,9 @@ intellijPlatform {
 
     pluginVerification {
         ides {
-            create(org.jetbrains.intellij.platform.gradle.IntelliJPlatformType.PhpStorm, "2026.1")
+            create(org.jetbrains.intellij.platform.gradle.IntelliJPlatformType.PhpStorm, "2026.1.4")
+            create(org.jetbrains.intellij.platform.gradle.IntelliJPlatformType.PhpStorm, "2026.2")
+            create(org.jetbrains.intellij.platform.gradle.IntelliJPlatformType.PhpStorm, "2026.3")
         }
     }
 

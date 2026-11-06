@@ -42,8 +42,8 @@
     <depends>com.intellij.database</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <platform.lsp.serverSupportProvider
-            implementation="com.mahocommerce.maho.lsp.MahoLspServerSupportProvider"/>
+        <platform.lsp.integrationProvider
+            implementation="com.mahocommerce.maho.lsp.MahoLspIntegrationProvider"/>
         <projectConfigurable
             instance="com.mahocommerce.maho.lsp.MahoConfigurable"
             id="com.mahocommerce.maho.settings"

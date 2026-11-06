@@ -2,7 +2,7 @@ package com.mahocommerce.maho.lsp
 
 import com.intellij.openapi.options.BoundConfigurable
 import com.intellij.openapi.project.Project
-import com.intellij.platform.lsp.api.LspServerManager
+import com.intellij.platform.lsp.api.LspClientManager
 import com.intellij.ui.dsl.builder.panel
 import com.intellij.ui.dsl.builder.bindText
 import com.intellij.ui.dsl.builder.bindSelected
@@ -59,8 +59,8 @@ class MahoConfigurable(private val project: Project) : BoundConfigurable("Maho")
 
     override fun apply() {
         super.apply()
-        LspServerManager.getInstance(project)
-            .stopAndRestartIfNeeded(MahoLspServerSupportProvider::class.java)
+        LspClientManager.getInstance(project)
+            .stopAndRestartClientsIfNeeded(MahoLspIntegrationProvider::class.java)
 
         val basePath = project.basePath
         if (basePath != null && settings.state.autoConfigureDatabase) {

@@ -20,9 +20,9 @@ PhpStorm/IntelliJ plugin for [Maho Commerce](https://mahocommerce.com) providing
 
 ## Tech Stack
 
-- Kotlin on JVM 23, using IntelliJ Platform SDK (`org.jetbrains.intellij.platform` plugin v2.13.1)
+- Kotlin on JVM 23, using IntelliJ Platform SDK (`org.jetbrains.intellij.platform` plugin v2.20.0)
 - Target IDE: PhpStorm (`platformType = PS`), depends on the `com.jetbrains.php` and `com.intellij.database` bundled plugins
-- Uses IntelliJ's `platform.lsp` API (`ProjectWideLspServerDescriptor`, `LspServerSupportProvider`)
+- Uses IntelliJ's `platform.lsp` API (`ProjectWideLspClientDescriptor`, `LspIntegrationProvider`, available since 2026.1.4)
 - Gradle with Kotlin DSL, configuration cache enabled
 
 ## Architecture
@@ -30,8 +30,8 @@ PhpStorm/IntelliJ plugin for [Maho Commerce](https://mahocommerce.com) providing
 Source lives under `src/main/kotlin/com/mahocommerce/maho/`, split by feature area:
 
 **`lsp/`**
-- **MahoLspServerSupportProvider** — Entry point registered in `plugin.xml`. On file open, checks if the file is PHP/XML/PHTML and a `maho` CLI exists in the project root, then starts the LSP server.
-- **MahoLspServerDescriptor** — Builds the command line (`php maho dev:lsp:start`) to launch the LSP process. Reads the configurable PHP command from settings.
+- **MahoLspIntegrationProvider** — Entry point registered in `plugin.xml`. On file open, checks if the file is PHP/XML/PHTML and a `maho` CLI exists in the project root, then starts the LSP server.
+- **MahoLspClientDescriptor** — Builds the command line (`php maho dev:lsp:start`) to launch the LSP process. Reads the configurable PHP command from settings.
 - **MahoSettings / MahoSettingsState** — Project-level persistent state (`maho.xml`) storing the PHP command path and the `autoConfigureDatabase` / `autoConfigureMcp` toggles.
 - **MahoConfigurable** — Settings UI panel under Tools > Maho (LSP / Database / MCP groups). On apply, restarts the LSP server and re-runs the database and MCP configurators.
 
